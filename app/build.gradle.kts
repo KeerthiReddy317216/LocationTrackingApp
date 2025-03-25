@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -51,4 +52,10 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation ("androidx.work:work-runtime-ktx:2.7.0")
+
+    implementation("net.zetetic:android-database-sqlcipher:4.5.4")
+    kapt("androidx.room:room-compiler:2.5.2")
+    implementation ("androidx.room:room-runtime:2.5.2")
+    implementation("androidx.sqlite:sqlite-ktx:2.3.1")
+    implementation ("com.google.code.gson:gson:2.11.0")
 }

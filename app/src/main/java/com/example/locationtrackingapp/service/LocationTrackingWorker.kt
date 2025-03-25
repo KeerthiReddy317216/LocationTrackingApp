@@ -7,9 +7,8 @@ import android.content.Intent
 import android.os.Build
 
 class LocationTrackingWorker(context: Context, workerParams: WorkerParameters) : Worker(context, workerParams) {
-
+    val serviceIntent = Intent(applicationContext, LocationTrackingService::class.java)
     override fun doWork(): Result {
-        val serviceIntent = Intent(applicationContext, LocationTrackingService::class.java)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             applicationContext.startForegroundService(serviceIntent)
         }else{
