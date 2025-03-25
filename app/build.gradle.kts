@@ -29,8 +29,8 @@ android {
         }
         debug {
             // Disable ProGuard/R8 for debug builds
-            isMinifyEnabled =  true
-            isShrinkResources = true
+            isMinifyEnabled =  false
+            isShrinkResources = false
         }
     }
     compileOptions {
